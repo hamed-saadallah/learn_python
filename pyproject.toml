@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "hello-world-project"
+version = "0.1.0"
+description = "A simple hello world Python project"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

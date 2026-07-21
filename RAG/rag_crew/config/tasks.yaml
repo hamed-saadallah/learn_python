@@ -1,0 +1,10 @@
+summarize_pdf:
+  description: >
+    Read the PDF at {pdf_path} using the read_pdf tool. Analyze the extracted
+    content and write a concise summary that captures the main topic, key
+    points, and conclusions.
+  expected_output: >
+    A markdown summary with three sections: Executive Summary, Key Points
+    (bullet list), and Conclusion.
+  agent: pdf_summarizer
+  output_file: output/summary.md

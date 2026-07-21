@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "rag"
+version = "0.1.0"
+description = "A simple RAG agent that reads PDFs and summarizes them using CrewAI and Mistral AI"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{ include = "rag_crew" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+crewai = ">=0.80.0"
+crewai-tools = ">=0.14.0"
+python-dotenv = ">=1.0.0"
+pypdf = ">=4.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=8.0.0"
+
+[tool.poetry.scripts]
+rag-summarize = "main:run"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

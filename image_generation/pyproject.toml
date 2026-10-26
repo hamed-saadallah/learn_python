@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "image-generation"
+version = "0.1.0"
+description = "FastAPI example that generates images with the Mistral Agents image_generation tool"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{ include = "app" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = ">=0.115.0"
+uvicorn = { extras = ["standard"], version = ">=0.32.0" }
+mistralai = { extras = ["agents"], version = ">=1.5.0" }
+python-dotenv = ">=1.0.0"
+pydantic = ">=2.0.0"
+pydantic-settings = ">=2.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=8.0.0"
+httpx = ">=0.27.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

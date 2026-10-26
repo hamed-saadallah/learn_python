@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  weaviate:
+    image: semitechnologies/weaviate:latest
+    ports:
+      - "8080:8080"
+    environment:
+      QUERY_DEFAULTS_LIMIT: 25
+      DEFAULT_VECTORIZER_MODULE: text2vec-huggingface
+      ENABLE_MODULES: text2vec-huggingface
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/v1/.well-known/ready"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - rag_network
+
+networks:
+  rag_network:
+    driver: bridge
